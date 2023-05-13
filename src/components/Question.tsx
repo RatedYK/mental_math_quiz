@@ -18,7 +18,7 @@ const Question = ({questionCounter, currentQuestion, userAnswer, onChange, saveQ
         <h1 className="quiz--question-number">Q{questionCounter}</h1>
         <div className='quiz--question'>{currentQuestion.question}</div>
         <form className='quiz--form' onSubmit={saveQuestionNextQuestion}>
-            <input className='quiz--form-input' type="number" onChange={onChange} value={userAnswer}></input>
+            <input className='quiz--form-input' type="number" onChange={onChange} value={userAnswer} min={0}></input>
             <button className="quiz--form-submit-btn">Submit</button>
             {gameMode==="infinite" && <button className="quiz--form-stop-btn" onClick={stopGame} type="button">Stop</button>}
         </form>

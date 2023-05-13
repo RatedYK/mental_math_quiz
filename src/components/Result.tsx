@@ -3,9 +3,10 @@ import '../styles/Result.css'
 
 type ResultProps = {
     allQuestions: SubmittedQuestionT[]
+    finishTime: string
 }
 
-const Result = ({allQuestions} : ResultProps) => {
+const Result = ({allQuestions, finishTime} : ResultProps) => {
     
     const redFont = {
         color: '#C11700'
@@ -20,6 +21,7 @@ const Result = ({allQuestions} : ResultProps) => {
         <div className="result--container">
             <h1 className="result--title">Result</h1>
             <div className="result--score">You scored {allQuestions.filter(question => question.correct).length} out of {allQuestions.length}</div>
+            <div className="result--time">Time: {finishTime}</div>
             <div className="result--questions-container">
                 {allQuestions.map((question, index) => {
                     return (

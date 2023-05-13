@@ -3,6 +3,7 @@ import { generateQuestion } from '../helperFunctions'
 import '../styles/Quiz.css'
 import Question from './Question'
 import Result from './Result'
+import Timer from './Timer';
 
 type QuizProps = {
     gameMode: string
@@ -28,18 +29,17 @@ const Quiz = ({gameMode, questionAmount} : QuizProps) => {
     const [userAnswer, setUserAnswer] = useState<any>(undefined)
     const [answer, setAnswer] = useState<number>(0)
     const [gameFinished, setGameFinished] = useState<boolean>(false)
+    const [time, setTime] = useState<string>("")
 
     useEffect(() => {
         setAnswer(currentQuestion.answer)
         if (gameMode === 'quiz') {
             checkIfGameFinished()
-            if (gameFinished) {
-                console.log('game finished')
-            }   
         }
-        console.log(allQuestions)
     }, [currentQuestion])
 
+    
+    // HANDLER FUNCTIONS
     function onChange(event: React.ChangeEvent<HTMLInputElement>) {
         setUserAnswer(parseFloat(event.target.value))
     }
@@ -73,11 +73,25 @@ const Quiz = ({gameMode, questionAmount} : QuizProps) => {
         setGameFinished(true)
     }
 
+    function updateTime(userMinute:number, userSecond:number) {
+        let outputString = ""
+        if (userMinute >= 1) {
+            outputString = `${userMinute}:${userSecond >= 10 ? userSecond : `0${userSecond}`} minutes`
+        } else {
+            outputString = `${userSecond} seconds`
+        }
+        setTime(outputString)
+    }
+
+    console.log(time)
+
     return (
-        <>
+        <> 
+            <Timer gameFinished={gameFinished} updateTime={updateTime}/>
             {gameFinished ?
                 <Result 
                     allQuestions={allQuestions}
+                    finishTime={time}
                 />
                 :
                 <Question

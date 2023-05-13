@@ -27,8 +27,15 @@ export const generateOperator = () => {
 export const generateQuestion:any = () => {
     const num1 = generateRandomNumber();
     const num2 = generateRandomNumber();
-    const operator = generateOperator();
+    let operator = generateOperator();
     const answer = calcAnswer(num1, num2, operator);
+    
+    if (operator === '/') {
+        operator = "÷";
+    }
+    if (operator === '*') {
+        operator = "x";
+    }
 
     if (answer < 0 || answer % 1 !== 0 || answer === Infinity) return generateQuestion();
 

@@ -5,7 +5,7 @@ type InfoProps = {
 const Info = ({questionAmount} : InfoProps) => {
   return (
     <div className='app--info-container'>
-        <h1 className='app--info-title'>MathWiz</h1>
+        <h1 className='app--info-title'>🧙‍♂️ MathWiz 🧙‍♂️</h1>
         <p className='app--info'>This is a simple math quiz game. <br></br>
           You can choose between two game modes:
           <br></br> Quiz Mode and Infinite Mode.
