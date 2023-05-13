@@ -24,9 +24,11 @@ export const generateOperator = () => {
     return operators[generateRandomNumber(operators.length)];
 }
 
-export const generateQuestion:any = () => {
-    const num1 = generateRandomNumber();
-    const num2 = generateRandomNumber();
+export const generateQuestion:any = (scale: number) => {
+    const range = 10 + scale;
+
+    const num1 = generateRandomNumber(range);
+    const num2 = generateRandomNumber(range);
     let operator = generateOperator();
     const answer = calcAnswer(num1, num2, operator);
     

@@ -30,6 +30,7 @@ const Quiz = ({gameMode, questionAmount} : QuizProps) => {
     const [answer, setAnswer] = useState<number>(0)
     const [gameFinished, setGameFinished] = useState<boolean>(false)
     const [time, setTime] = useState<string>("")
+    const [scale, setScale] = useState<number>(0)
 
     useEffect(() => {
         setAnswer(currentQuestion.answer)
@@ -58,12 +59,21 @@ const Quiz = ({gameMode, questionAmount} : QuizProps) => {
     }
 
     function nextQuestion() {
-        setCurrentQuestion(generateQuestion())
+        let increaseRange = 1
+        if (gameMode === 'quiz') {
+            if (questionCounter > 15) {
+                increaseRange = 3
+            }
+            setScale(scale + increaseRange)
+        } else if (gameMode === 'infinite') {
+            setScale(scale + 0.5)
+        }
+        
+        setCurrentQuestion(generateQuestion(scale))
         setUserAnswer("")
     }
 
     function checkIfGameFinished() {
-        // Change this value to have longer/shorter games!
         if (questionCounter === questionAmount) {
             setGameFinished(true)
         }

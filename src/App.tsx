@@ -7,7 +7,7 @@ import './App.css'
 
 const App = () => {
   const [gameMode, setGamemode] = useState<string>('quiz')
-  const [questionAmount, setQuestionAmount] = useState<number>(11)
+  const [questionAmount, setQuestionAmount] = useState<number>(21)
   const [showBtnContainer, setShowBtnContainer] = useState<boolean>(true)
   const [showQuiz, setShowQuiz] = useState<boolean>(false)
   const [showInfo, setShowInfo] = useState<boolean>(true)
