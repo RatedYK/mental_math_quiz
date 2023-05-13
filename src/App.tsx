@@ -2,6 +2,7 @@ import { useState } from 'react'
 import GameMode from './components/GameMode'
 import Quiz from './components/Quiz'
 import Info from './components/Info'
+import Copyright from './components/Copyright'
 import './App.css'
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
       {showInfo && <Info questionAmount={questionAmount} />}
       {showBtnContainer && <GameMode playQuizMode={playQuizMode} playInfiniteMode={playInfiniteMode}/>}
       {showQuiz && <Quiz questionAmount={questionAmount}  gameMode={gameMode} />}
+      <Copyright name={"RatedYK"} color={"white"} fontsize={'0.8rem'}/>
     </>
   )
 }
