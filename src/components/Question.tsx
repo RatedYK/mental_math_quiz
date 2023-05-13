@@ -22,7 +22,7 @@ const Question = ({questionCounter, currentQuestion, userAnswer, onChange, saveQ
             <button className="quiz--form-submit-btn">Submit</button>
             {gameMode==="infinite" && <button className="quiz--form-stop-btn" onClick={stopGame} type="button">Stop</button>}
         </form>
-        <p className='quiz--info' style={{visibility: questionCounter === 1 ? 'visible' : 'hidden'}}>you can also <br></br> press enter to submit</p>
+        <p className='quiz--info' style={{visibility: questionCounter === 1 ? 'visible' : 'hidden'}}>*HINT* you can also <br></br> press enter to submit</p>
     </div>
   )
 }
