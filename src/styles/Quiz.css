@@ -37,6 +37,16 @@
     border: none;
     border-radius: 5px;
     padding: 1rem 2rem;
+    width: clamp(10rem, 20vw, 15rem);
+}
+.quiz--form-stop-btn {
+    background-color: #C70039;
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    width: clamp(10rem, 20vw, 15rem);
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
 }
 
 .quiz--info {
