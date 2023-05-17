@@ -11,7 +11,7 @@
 }
 
 .app--info-title {
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(2rem, 10vw, 11rem);
   font-weight: 700;
 }
 
