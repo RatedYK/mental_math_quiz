@@ -39,6 +39,11 @@
     padding: 1rem 2rem;
     width: clamp(10rem, 20vw, 15rem);
 }
+.quiz--form-submit-btn:hover {
+    background-color: lightblue;
+    color: black;
+}
+
 .quiz--form-stop-btn {
     background-color: #C70039;
     color: white;
@@ -47,6 +52,11 @@
     border: none;
     border-radius: 5px;
     padding: 1rem 2rem;
+}
+
+.quiz--form-stop-btn:hover {
+    background-color: #FF5733;
+    color: black;
 }
 
 .quiz--info {
